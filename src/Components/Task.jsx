@@ -2,23 +2,25 @@ import React from "react";
 
 
 
+
 const Task = ({task, removeTask }) => {
 
     return (
 
 
         <div key={task.id}>
-            <h4>Task-Details</h4>
+         
+           
             <div className="task-list">
                 <div>
-                    <p>Task:{task.taskName}</p>
+                    <p><span className="text">Task:</span>{task.taskName}</p>
                 </div>
                 <div className="time-detail">
-                    <p>Start Time:   {task.startTime}</p>
+                    <p><span className="text">Start Time:  </span>{task.startTime}</p>
                     <br/>
-                    <p>Stop Time:    {task.stopTime}</p>
+                    <p><span className="text">Stop Time:  </span>  {task.stopTime}</p>
                     <br/>
-                    <p>Time Taken:   {task.totalTime} seconds</p>
+                    <p><span className="text">Time Taken: </span>  {task.totalTime} seconds</p>
                 </div>
                 <div>
                     <button onClick={removeTask}>Remove Task</button> 
