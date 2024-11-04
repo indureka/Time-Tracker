@@ -1,31 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
+import TaskContext from "../Contexts/TaskContext";
+import { formatTime } from './TaskInput'; 
 
 
 
+const Task = ({task}) => {
 
-const Task = ({task, removeTask }) => {
+    const { removeTask } = useContext(TaskContext)
+
+    const handleRemove = () => {
+        removeTask(task.id);
+    };
 
     return (
 
 
         <div key={task.id}>
+
+      
          
-           
             <div className="task-list">
+               
+                        <div className="task-name">
+                            <p>{task.taskName}</p>
+                        </div>
+                        <div className="time-detail">
+                            <p>{task.startTime}</p>
+
+                            <p>-</p>
+                            
+                            <p>{task.stopTime}</p>
+                            
+                            <p>{formatTime(task.totalTime)}</p>
+                        </div>
+               
                 <div>
-                    <p><span className="text">Task:</span>{task.taskName}</p>
-                </div>
-                <div className="time-detail">
-                    <p><span className="text">Start Time:  </span>{task.startTime}</p>
-                    <br/>
-                    <p><span className="text">Stop Time:  </span>  {task.stopTime}</p>
-                    <br/>
-                    <p><span className="text">Time Taken: </span>  {task.totalTime} seconds</p>
-                </div>
-                <div>
-                    <button onClick={removeTask}>Remove Task</button> 
+                    <button onClick={handleRemove} className="btn">Remove Task</button> 
                 </div>
             </div>
+
+            
         </div>
     )
 }

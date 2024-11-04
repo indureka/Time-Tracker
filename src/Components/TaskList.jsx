@@ -1,13 +1,17 @@
 import React from "react";
 import Task from "./Task";
+import { useTaskContext } from "../Contexts/TaskContext";
 
-const TaskList = ({ taskArray, removeTask }) => {
+const TaskList = () => {
+  const { taskArray, removeTask } = useTaskContext(); 
+
   return (
+
     <div>
-      {taskArray.map((task, index) => (
-        <Task key={task.id} task={task} removeTask={() => removeTask(index)} />
-      ))}
-    </div>
+    {taskArray.map((task) => (
+        <Task key={task.id} task={task} removeTask={() => removeTask(task.id)} />
+    ))}
+</div>
   );
 };
 

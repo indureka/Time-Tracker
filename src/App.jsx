@@ -1,11 +1,14 @@
 import TaskManager from "./Components/TaskManager";
+import { TaskProvider } from "./Contexts/TaskProvider";
 
 import "./App.css";
 
 function App() {
   return (
     <>
-      <TaskManager />
+      <TaskProvider>
+            <TaskManager />
+        </TaskProvider>
     </>
   );
 }
