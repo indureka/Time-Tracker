@@ -21,8 +21,21 @@ const Task = ({task}) => {
          
             <div className="task-list">
                
-                        <div className="task-name">
-                            <p>{task.taskName}</p>
+                        <div className="task-box">
+                            <p className="t-name">{task.taskName}</p>
+
+                           {task.projectName ? (
+                            <p className="p-name">{task.projectName}</p>
+                           ) : (
+                            <p>NA</p>
+                           ) }
+                            
+
+                            {task.isBillEnable ? (
+                                    <span className="bill-enabled">$</span>
+                                ) : 
+                                <span className="bill-disabled">$</span> }
+                            
                         </div>
                         <div className="time-detail">
                             <p>{task.startTime}</p>
@@ -35,7 +48,7 @@ const Task = ({task}) => {
                         </div>
                
                 <div>
-                    <button onClick={handleRemove} className="btn">Remove Task</button> 
+                    <button onClick={handleRemove} className="remove-btn">Remove Task</button> 
                 </div>
             </div>
 

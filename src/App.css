@@ -15,6 +15,34 @@ h1{
   margin: 1rem;
 }
 
+nav {
+  background-color:#fff;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: blue;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: darkblue;
+}
+
+.input-container{
+  background-color: #fff;
+  border:0.7px solid #c1c5c7;
+}
+
 .task-input{
   /* border: 1px solid; */
   display:flex;
@@ -39,12 +67,86 @@ h1{
 }
 
 input{
-  width:1000px;
+  width:850px;
   padding:1rem;
   padding-right: 5rem;
   font-size: 1rem;
-  border:0.7px solid #c1c5c7;
+  border:none;
+  /* border:0.7px solid #c1c5c7; */
   color: #333;
+}
+
+.input:active{
+  border:0.7px solid #c1c5c7;
+}
+
+.project-btn{
+  background: transparent;
+  text-decoration: underline;
+  color: blue;
+  border:none;
+  padding:5px;
+  margin: 0 20px;
+  font-size: 1rem;
+}
+
+.project-btn:hover{
+  color: rgb(11, 11, 117)
+}
+
+.project-title{
+  padding:10px 25px 10px 10px;
+  color:blue;
+  font-size: 1rem;
+
+  border-right: 1px dotted gray;
+}
+
+.bill-btn{
+  background: transparent;
+  color: gray;
+  border:none;
+  padding:5px;
+  margin: 0 5px;
+  font-size: 1.5rem;
+}
+
+.bill-btn:hover{
+  color:blue;
+}
+
+.bill-btn:active{
+  color:blue;
+}
+
+.t-name{
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.p-name{
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.bill-enabled{
+color:blue;
+font-size: 1.5rem;
+}
+
+.bill-disabled{
+  color:#333;
+  font-size: 1.5rem;
+}
+
+.task-box{
+  
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .timer{
@@ -55,13 +157,12 @@ input{
 }
 
 
-.btn {
+.btn, .remove-btn {
   padding: 8px 10px;
   background-color: rgb(79, 142, 224);
   color: #fff;
   font-size: 0.9rem;
   border: none;
-  
   cursor: pointer;
   transition: background-color 0.3s;
   margin: 0 5px;
@@ -70,6 +171,15 @@ input{
 
 .btn:hover {
   background-color: rgb(33, 119, 231);
+}
+
+.remove-btn {
+  background-color: rgb(250, 83, 83);
+  
+}
+
+.remove-btn:hover {
+  background-color: rgb(202, 66, 66);
 }
 
 .task-box{
@@ -88,10 +198,7 @@ input{
   justify-content: space-between;
   align-items:center;
   background-color: #E4EAEE;
-
- 
-
-  border:1px solid #c1c5c7;
+border:1px solid #c1c5c7;
  
 }
 

@@ -14,6 +14,9 @@ export const formatTime = (totalSeconds) => {
 const TaskInput = () => {
   const {
     taskName,
+    projectName,
+    handleProject,
+    handleBill,
     handleChange,
     isRunning,
     startTimer,
@@ -26,12 +29,12 @@ const TaskInput = () => {
  
   return (
     <>
-      <h1>To do App</h1>
+      <h1>Time Tracker</h1>
 
       <div className="task-input">
       
         <form onSubmit={(e) => e.preventDefault()}>
-          <div>
+          <div className="input-container">
             <input
               type="text"
               value={taskName}
@@ -41,9 +44,13 @@ const TaskInput = () => {
               
               disabled={isRunning}
             />
+            <button onClick={handleProject} className="project-btn">+Project</button>
             </div>
 
             <div className="time-box">
+
+              <p className="project-title">{projectName}</p>
+              <button onClick={handleBill} className="bill-btn">$</button>
 
             <p className="timer">{formatTime(count)}</p>
 
@@ -57,12 +64,6 @@ const TaskInput = () => {
             </button>
           )}
   
-          
-          
-        
-              
-             
-            
           </div>
         </form>
       </div>

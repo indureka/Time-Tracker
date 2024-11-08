@@ -10,18 +10,48 @@
   const [stopTime, setStopTime] = useState("");
   const [taskArray, setTaskArray] = useState([]);
   const [totalConsumedTime, setTotalConsumedTime] = useState(0);
+  const [projectName, setProjectName] = useState("");
+  const [isBillEnable, setIsBillEnable] = useState(false);
+
+  const [chartData, setChartData] = useState({
+    labels: [],
+    datasets: [
+      {
+        label: 'Time Taken',
+        data:[],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',    
+      }
+    ]
+  })
 
 // handlechange
   const handleChange = (event) => {
     setTaskName(event.target.value);
   };
 
+
+//handle ProjectName  
+
+const handleProject = (e) => {
+  const project=prompt("Enter project name");
+  if(project)
+  setProjectName(project || "");
+};
+
+
+//handle bill
+
+const handleBill = (e) => {
+setIsBillEnable((prev) => !prev);
+}
+
   //handlesubmit
 
   const handleSubmit = () => {
    
     if (!isRunning && taskName && startTime && stopTime) {
-      addTask(taskName, startTime, stopTime, count);
+      const totalTime = count;
+      addTask(taskName, projectName, isBillEnable, startTime, stopTime, totalTime);
       resetForm();
     } else {
       console.error("Please complete the task properly.");
@@ -32,9 +62,11 @@
 
   const resetForm = () => {
     setTaskName(""); // Clear input
+    setProjectName("") // clear projectName
     setCount(0); // Reset timer
     setStartTime(""); // Reset start time
     setStopTime(""); // Reset stop time
+    setIsBillEnable(false); // false
   };
 
   //start timer
@@ -57,10 +89,12 @@
 
    // Add task
 
-  const addTask = (taskName, startTime, stopTime, totalTime) => {
+  const addTask = (taskName, projectName, isBillEnable, startTime, stopTime, totalTime) => {
     const newTask = {
       id: Date.now(),
       taskName,
+      isBillEnable,
+      projectName,
       startTime,
       stopTime,
       totalTime,
@@ -72,6 +106,8 @@
 
     console.log("added", updatedTask);
     console.log(updatedTask);
+    updateChartData(newTask);
+    console.log("updatedchart", updateChartData)
   };
 
 
@@ -96,7 +132,7 @@
     // Use effect to handle task submission when the timer stops
     useEffect(() => {
       if (!isRunning && taskName && startTime && stopTime) {
-        addTask(taskName, startTime, stopTime, count);
+        addTask(taskName, projectName, isBillEnable, startTime, stopTime, count);
         resetForm(); // Reset the form after adding the task
       } else if (!isRunning) {
         console.error("Please complete the task properly.");
@@ -115,14 +151,34 @@
     return () => clearInterval(counter);
   }, [isRunning]);
 
+
+  //Update chart data
+
+  const updateChartData = (task) => {
+    setChartData(prevData => ({
+      labels: [...prevData.labels, task.projectName || task.taskName],
+      datasets: [{
+        label: 'Time Taken',
+        data: [...prevData.datasets[0].data, task.totalTime]
+     }]
+    }));
+  };
+
+ 
+
+
 return (
     <TaskContext.Provider
         value={{
             taskArray, totalConsumedTime, taskName, setTaskName,
+            projectName, setProjectName,
+            isBillEnable, setIsBillEnable,
             isRunning, setIsRunning, count, setCount,
             startTime, setStartTime, stopTime, setStopTime,
             handleChange, resetForm, startTimer, stopTimer,
-            addTask, removeTask, handleSubmit
+            addTask, removeTask, handleSubmit, handleProject,
+            handleBill, chartData, setChartData, updateChartData
+            
         }} >
                 {children}
         </TaskContext.Provider>
