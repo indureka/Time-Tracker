@@ -10,7 +10,11 @@ const Chart = () => {
     return (
 
 
-    <div>
+    <div style={{maxWidth:"700px", 
+    padding:"20px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    backgroundColor: "#f9f9f9",
+    }}>
         <Bar
         data={chartData}
         options={{
@@ -19,7 +23,12 @@ const Chart = () => {
                 x: {
                     title:{
                         display:true,
-                        text:"Task/Project",
+                        text:"Task/Project", 
+                        font:{
+                            size: 14,
+                            weight:"bold"
+                        },
+                        color: "#333",
                     }
                 },
                 y: {
@@ -27,6 +36,11 @@ const Chart = () => {
                     title: {
                         display:true,
                         text:"Time Taken (seconds)",
+                        font:{
+                            size:14,
+                            weight:"bold",
+                        },
+                        color:"#333",
                     }
                 }
             },
@@ -34,6 +48,12 @@ const Chart = () => {
                 legend:{
                     display:true,
                     position:"top",
+                    labels:{
+                        color:"#333",
+                        font:{
+                            size:12
+                        }
+                    }
                 }
             }
 

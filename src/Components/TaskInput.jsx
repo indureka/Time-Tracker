@@ -29,7 +29,7 @@ const TaskInput = () => {
  
   return (
     <>
-      <h1>Time Tracker</h1>
+     
 
       <div className="task-input">
       

@@ -5,7 +5,7 @@ const ReportPage = () => {
 
     return (
 
-        <div>
+        <div className="chart-container">
             <h2>Task Report</h2>
             <p>View the time taken for each task or project below:</p>
             <Chart/>

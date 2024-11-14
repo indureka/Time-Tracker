@@ -121,7 +121,11 @@ setIsBillEnable((prev) => !prev);
     console.log("After filtering:", updatedTask); // Log after filtering
     setTaskArray(updatedTask); // Update the task array
     setTotalConsumedTime(calculateTime(updatedTask)); // Update total consumed time
-};
+    const taskToRemove = taskArray.find((task) => task.id === id);
+    if (taskToRemove) {
+      removeTaskFromChart(taskToRemove); // Pass the correct task to remove
+    }
+  };
 
 
 //calculatetime  
@@ -162,9 +166,36 @@ setIsBillEnable((prev) => !prev);
         data: [...prevData.datasets[0].data, task.totalTime]
      }]
     }));
+    console.log(updateChartData);
   };
 
- 
+ // RemoveUpdateChart
+
+ const removeTaskFromChart = (task) => {
+  setChartData(prevData => {
+    // Find the index of the task to remove
+    const taskIndex = prevData.labels.findIndex(
+      label => label === (task.projectName || task.taskName)
+    );
+
+    if (taskIndex === -1) return prevData; // If task not found, return unchanged data
+
+    // Remove the task at `taskIndex` from both `labels` and `data`
+
+    console.log("removed");
+    return {
+      labels: prevData.labels.filter((_, index) => index !== taskIndex),
+      datasets: [
+        {
+          ...prevData.datasets[0],
+          data: prevData.datasets[0].data.filter((_, index) => index !== taskIndex)
+        }
+      ]
+    };
+  });
+  console.log(removeTaskFromChart);
+};
+
 
 
 return (

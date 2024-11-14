@@ -10,49 +10,103 @@ body{
   background-color: rgba(226, 226, 230, 0.356);
 }
 
+.main-container{
+display:flex;
+height:100vh;
+
+}
+
+
+
 h1{
+  background-color: #fff;
   text-align: center;
-  margin: 1rem;
+  padding: 1rem 0;
+  border:0.7px solid #c1c5c7;
 }
 
 nav {
   background-color:#fff;
+  width:150px;
+  border:0.7px solid #c1c5c7;
+  
 }
 
 nav ul {
+  
   display: flex;
-  gap: 20px;
-  padding: 10px;
+  flex-direction: column;
+  /* gap: 20px; */
+  /* padding: 10px; */
   list-style: none;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
+nav ul li {
+  display: flex;
+  width:150px;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+  padding:10px 0;
+ 
+ 
+}
+
+nav ul li:hover{
+  background-color: rgba(226, 226, 230, 0.356);
+}
+
+nav ul li:active{
+  background-color: rgba(226, 226, 230, 0.356);
+}
+
+
+
 nav a {
+  padding:0 20px;
   text-decoration: none;
   color: blue;
   font-size: 18px;
+
+  
 }
 
-nav a:hover {
-  color: darkblue;
+
+.home-icon, .timer-icon{
+
+ 
+  width:20px;
+  height:20px;
+  color:blue;
+  font-size: 1rem;
+  margin-right:10px;
+  
 }
 
 .input-container{
   background-color: #fff;
   border:0.7px solid #c1c5c7;
+  width:1000px;
+
+  
+  
 }
 
 .task-input{
+  width:1000px;
+  background-color: white;
   /* border: 1px solid; */
   display:flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.1), /* Light top shadow */
-              0px 3px 8px rgba(0, 0, 0, 0.1); 
- 
+              0px 3px 8px rgba(0, 0, 0, 0.1);
+  border:1px solid #c1c5c7; 
   
+ 
 }
 
 .time-box{
@@ -62,8 +116,9 @@ nav a:hover {
   align-items:flex-start;
   gap:0.5rem;
  background-color: #fff;
- border:1px solid #c1c5c7;
+ /* border:1px solid #c1c5c7; */
   border-top:none;
+ 
 }
 
 input{
@@ -98,24 +153,20 @@ input{
   padding:10px 25px 10px 10px;
   color:blue;
   font-size: 1rem;
-
-  border-right: 1px dotted gray;
+  
 }
 
 .bill-btn{
   background: transparent;
   color: gray;
   border:none;
-  padding:5px;
+  padding:5px 10px 5px 5px;
   margin: 0 5px;
   font-size: 1.5rem;
+ 
 }
 
 .bill-btn:hover{
-  color:blue;
-}
-
-.bill-btn:active{
   color:blue;
 }
 
@@ -132,21 +183,26 @@ input{
 .bill-enabled{
 color:blue;
 font-size: 1.5rem;
+
 }
 
 .bill-disabled{
-  color:#333;
-  font-size: 1.5rem;
+  color:gray;
+  font-size: 1.5rem; 
+ 
 }
 
-.task-box{
-  
+.project-container{
+  width:200px;
   display: flex;
   gap: 20px;
   padding: 10px;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
+ justify-content: space-between;
+ align-items: center;
+ margin-right: 30px;
+ /* border-right: 1px dotted gray; */
+
+  
 }
 
 .timer{
@@ -184,9 +240,11 @@ font-size: 1.5rem;
 
 .task-box{
   display:flex;
+
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+ 
   
 }
 
@@ -231,7 +289,7 @@ padding:0.5rem;
 }
 
 .time-detail{
-  width:600px;
+  width:550px;
   display:flex; 
   justify-content: flex-end;
   align-items:flex-end;
@@ -244,6 +302,26 @@ padding:0.5rem;
 .task-list p, .time-detail p{
   font-size: 1rem;
   color: #333;
+}
+
+/* Chart */
+
+.chart-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:15px;
+  margin:20px;
+}
+
+.chart-container h2{
+color:blue;
+}
+
+.chart-container p{
+color: #333;
+font-size: 1.2rem;
 }
 
 

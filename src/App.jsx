@@ -24,21 +24,28 @@ import "./App.css";
 
 function App() {
   return (
+  <>
+  
+    <h1>Time Tracker</h1>
     <Router>
-    <div>
+    <div className="main-container">
       <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className="home-link">
+          <i className="fa-solid fa-house home-icon"></i>
+          Home</Link>
         </li>
-        <li>
-          <Link to="/report">Report</Link>
+        <li className="report-link">
+          <Link to="/report" >
+          <i className="fa-regular fa-clock timer-icon"></i>
+          Report</Link>
         </li>
       </ul>
 
       </nav>
 
-      
+      <div className="main-content">
       <TaskProvider>
       <Routes>
         <Route path='/' element={<HomePage/>} />
@@ -46,9 +53,11 @@ function App() {
       </Routes>
            
         </TaskProvider>
+        </div>
     </div>
 
     </Router>
+    </>
   );
 }
 

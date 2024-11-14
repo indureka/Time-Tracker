@@ -21,7 +21,7 @@ const Task = ({task}) => {
          
             <div className="task-list">
                
-                        <div className="task-box">
+                        <div className="project-container">
                             <p className="t-name">{task.taskName}</p>
 
                            {task.projectName ? (
