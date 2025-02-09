@@ -1,3 +1,5 @@
+11
+
 import React from "react";
 import { useContext } from "react";
 import TaskContext from "../Contexts/TaskContext";
@@ -10,7 +12,7 @@ const Chart = () => {
     return (
 
 
-    <div style={{maxWidth:"700px", 
+    <div style={{minWidth:"900px", minHeight:"350px",
     padding:"20px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     backgroundColor: "#f9f9f9",
@@ -35,7 +37,7 @@ const Chart = () => {
                     beginAtZero:true,
                     title: {
                         display:true,
-                        text:"Time Taken (seconds)",
+                        text:"",
                         font:{
                             size:14,
                             weight:"bold",

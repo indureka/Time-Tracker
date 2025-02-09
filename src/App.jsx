@@ -1,11 +1,14 @@
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import NavBar from "./Components/NavBar";
 import HomePage from "./Pages/HomePage";
 import ReportPage from "./Pages/ReportPage";
 import TaskManager from "./Components/TaskManager";
 import { TaskProvider } from "./Contexts/TaskProvider";
+// import { myImage } from "../public/assets/logo.jpg";
+import "./App.css";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -20,31 +23,34 @@ import { Bar } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 
-import "./App.css";
+
+
 
 function App() {
   return (
   <>
   
-    <h1>Time Tracker</h1>
+   <div className="menu-bar">
+<div className="logo">
+  <img src="/assets/logo.jpg" alt="logo" />
+  <p>TrackMe</p>
+</div>
+{/* <div>
+  <p>My Workspace</p>
+</div> */}
+<div className="menu-btn">
+<p>
+  <i class="fa-solid fa-bell notify"></i>
+  </p>
+  <button className="login">Loign</button>
+  <button className="signup">SignUp</button>
+</div>
+
+   </div>
     <Router>
     <div className="main-container">
-      <nav>
-      <ul>
-        <li>
-          <Link to="/" className="home-link">
-          <i className="fa-solid fa-house home-icon"></i>
-          Home</Link>
-        </li>
-        <li className="report-link">
-          <Link to="/report" >
-          <i className="fa-regular fa-clock timer-icon"></i>
-          Report</Link>
-        </li>
-      </ul>
-
-      </nav>
-
+     
+            <NavBar />
       <div className="main-content">
       <TaskProvider>
       <Routes>

@@ -10,12 +10,92 @@ body{
   background-color: rgba(226, 226, 230, 0.356);
 }
 
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  background-color: #fff;
+  border: 1px solid #c1c5c7;
+  padding:10px;
+  gap:20px;
+}
+
+.logo {
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+ 
+  
+}
+
+.logo img {
+  width:55px;
+  height:55px;
+}
+
+.logo p {
+  margin-left:0;
+  font-size: 1.5rem;
+  color:#2177e7;
+  font-weight: bold;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.notify {
+  color:#2177e7;
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.notify:hover {
+  padding:5px;
+  border: 0.5px solid #2177e7;
+}
+
+.menu-btn {
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap:10px;
+} 
+
+.login {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #2177e7;
+  background-color: #fff;
+  color:#2177e7;
+}
+
+.login:hover {
+ 
+  border: 1px solid #c1c5c7;
+  background-color: #2177e7;
+  color: #fff;
+}
+
+.signup {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #c1c5c7;
+  background-color: #2177e7;
+  color:#fff;
+}
+
+.signup:hover {
+  background-color: #fff;
+  color: #2177e7;
+}
+
+
 .main-container{
 display:flex;
 height:100vh;
 
 }
-
+.title {
+  color: #2177e7;
+}
 
 
 h1{
@@ -27,9 +107,9 @@ h1{
 
 nav {
   background-color:#fff;
-  width:150px;
+  width:175px;
   border:0.7px solid #c1c5c7;
-  
+  border-top: none;
 }
 
 nav ul {
@@ -45,7 +125,7 @@ nav ul {
 
 nav ul li {
   display: flex;
-  width:150px;
+  width:175px;
   justify-content: center;
   align-items: center;
   gap:10px;
@@ -67,10 +147,8 @@ nav ul li:active{
 nav a {
   padding:0 20px;
   text-decoration: none;
-  color: blue;
+  color: #2177e7;
   font-size: 18px;
-
-  
 }
 
 
@@ -79,7 +157,7 @@ nav a {
  
   width:20px;
   height:20px;
-  color:blue;
+  color: #2177e7;
   font-size: 1rem;
   margin-right:10px;
   
@@ -88,10 +166,7 @@ nav a {
 .input-container{
   background-color: #fff;
   border:0.7px solid #c1c5c7;
-  width:1000px;
-
-  
-  
+  width:1000px; 
 }
 
 .task-input{
@@ -109,6 +184,11 @@ nav a {
  
 }
 
+/* 
+.input-container input:focus {
+  border: 1px solid #c1c5c7;
+} */
+
 .time-box{
   padding:0.3rem;
   display:flex; 
@@ -116,7 +196,8 @@ nav a {
   align-items:flex-start;
   gap:0.5rem;
  background-color: #fff;
- /* border:1px solid #c1c5c7; */
+ border-right: 1px solid #c1c5c7;
+ border-left: 1px solid #c1c5c7;
   border-top:none;
  
 }
@@ -127,7 +208,7 @@ input{
   padding-right: 5rem;
   font-size: 1rem;
   border:none;
-  /* border:0.7px solid #c1c5c7; */
+  border-right:0.7px solid #c1c5c7;
   color: #333;
 }
 
@@ -138,20 +219,22 @@ input{
 .project-btn{
   background: transparent;
   text-decoration: underline;
-  color: blue;
+  color: #2177e7;
   border:none;
   padding:5px;
+  padding-left:5px;
   margin: 0 20px;
   font-size: 1rem;
+  
 }
 
 .project-btn:hover{
-  color: rgb(11, 11, 117)
+  color: #2177e7;
 }
 
 .project-title{
   padding:10px 25px 10px 10px;
-  color:blue;
+  color: #2177e7;
   font-size: 1rem;
   
 }
@@ -167,7 +250,7 @@ input{
 }
 
 .bill-btn:hover{
-  color:blue;
+  color: #2177e7;
 }
 
 .t-name{
@@ -181,7 +264,7 @@ input{
 }
 
 .bill-enabled{
-color:blue;
+  color: #2177e7;
 font-size: 1.5rem;
 
 }
@@ -226,7 +309,7 @@ font-size: 1.5rem;
 }
 
 .btn:hover {
-  background-color: rgb(33, 119, 231);
+  background-color: #2177e7;
 }
 
 .remove-btn {
@@ -306,23 +389,55 @@ padding:0.5rem;
 
 /* Chart */
 
+.report-page{
+  margin-left:20px;
+  margin-top: 40px;
+}
+
 .chart-container {
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap:15px;
-  margin:20px;
+  margin-left:20px;
+  border: 1px solid #c1c5c7;
 }
 
 .chart-container h2{
-color:blue;
+  color: #030357f3;
 }
 
-.chart-container p{
+/* .chart-container p{
 color: #333;
 font-size: 1.2rem;
+text-align: left;
+border: 1px solid #c1c5c7;
+padding: 0.5rem;
+} */
+
+.home-page {
+  padding:1.2rem;
 }
+
+.report-time {
+  width:904px;
+  margin-left:20px;
+color: #333;
+font-size: 0.9rem;
+text-align: left;
+border: 1px solid #c1c5c7;
+border-bottom: none;
+padding: 0.5rem;
+
+}
+
+.report-timeValue {
+  font-size: 1.2rem;
+  color:black;
+}
+
+
 
 
 

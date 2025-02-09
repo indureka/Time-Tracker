@@ -8,7 +8,7 @@ const HomePage = () => {
 
     return (
 
-        <div>
+        <div className="home-page">
            
             
             <TaskManager/>
