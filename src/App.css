@@ -49,7 +49,7 @@ body{
 
 .notify:hover {
   padding:5px;
-  border: 0.5px solid #2177e7;
+  color:#216aca;
 }
 
 .menu-btn {
@@ -69,7 +69,7 @@ body{
 
 .login:hover {
  
-  border: 1px solid #c1c5c7;
+  
   background-color: #2177e7;
   color: #fff;
 }
@@ -77,14 +77,15 @@ body{
 .signup {
   padding: 10px;
   font-size: 0.9rem;
-  border: 1px solid #c1c5c7;
   background-color: #2177e7;
   color:#fff;
+  border:none;
 }
 
 .signup:hover {
   background-color: #fff;
   color: #2177e7;
+  border: 1px solid #2177e7;
 }
 
 
@@ -229,7 +230,7 @@ input{
 }
 
 .project-btn:hover{
-  color: #2177e7;
+  color: #216aca;;
 }
 
 .project-title{
