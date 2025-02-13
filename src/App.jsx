@@ -4,9 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from "./Components/NavBar";
 import HomePage from "./Pages/HomePage";
 import ReportPage from "./Pages/ReportPage";
-import TaskManager from "./Components/TaskManager";
 import { TaskProvider } from "./Contexts/TaskProvider";
-// import { myImage } from "../public/assets/logo.jpg";
+import MenuBar from "./Components/MenuBar";
 import "./App.css";
 
 import {
@@ -22,32 +21,13 @@ import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-
-
-
-
 function App() {
   return (
+    <Router>
   <>
   
-   <div className="menu-bar">
-<div className="logo">
-  <img src="/assets/logo.jpg" alt="logo" />
-  <p>TrackMe</p>
-</div>
-{/* <div>
-  <p>My Workspace</p>
-</div> */}
-<div className="menu-btn">
-<p>
-  <i class="fa-solid fa-bell notify"></i>
-  </p>
-  <button className="login">Loign</button>
-  <button className="signup">SignUp</button>
-</div>
-
-   </div>
-    <Router>
+  <MenuBar />
+    
     <div className="main-container">
      
             <NavBar />
@@ -62,8 +42,9 @@ function App() {
         </div>
     </div>
 
-    </Router>
+  
     </>
+    </Router>
   );
 }
 

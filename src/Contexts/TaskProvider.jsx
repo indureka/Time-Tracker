@@ -12,6 +12,7 @@
   const [totalConsumedTime, setTotalConsumedTime] = useState(0);
   const [projectName, setProjectName] = useState("");
   const [isBillEnable, setIsBillEnable] = useState(false);
+  const [isProjectInputVisible, setIsProjectInputVisible] = useState(false);
 
   const [chartData, setChartData] = useState({
     labels: [],
@@ -32,10 +33,20 @@
 
 //handle ProjectName  
 
+// const handleProject = (e) => {
+//   const project=prompt("Enter project name");
+//   if(project)
+//   setProjectName(project || "");
+// };
+
+
+
 const handleProject = (e) => {
-  const project=prompt("Enter project name");
-  if(project)
-  setProjectName(project || "");
+  setIsProjectInputVisible(true); // Show the input box
+};
+
+const handleProjectNameChange = (e) => {
+  setProjectName(e.target.value); // Update project name
 };
 
 
@@ -208,7 +219,8 @@ return (
             startTime, setStartTime, stopTime, setStopTime,
             handleChange, resetForm, startTimer, stopTimer,
             addTask, removeTask, handleSubmit, handleProject,
-            handleBill, chartData, setChartData, updateChartData
+            handleBill, chartData, setChartData, updateChartData,
+            handleProjectNameChange, setIsProjectInputVisible, isProjectInputVisible
             
         }} >
                 {children}
