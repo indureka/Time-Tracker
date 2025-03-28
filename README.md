@@ -11,3 +11,4 @@ Dynamic Total Time Calculation: Automatically calculates and displays the cumula
 Technologies Used
 React: JavaScript library for building user interfaces.
 CSS: For styling components and making the UI responsive and user-friendly.
+
